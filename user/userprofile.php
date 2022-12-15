@@ -18,33 +18,34 @@ require "../connection.php";
 					    {   
 					 
 					 	?>	
-					 	<img src="<?php echo ".".$row["user_pic"];?>" class="card-img-top" alt="profile image">	
+					 	<div class="text-center"><img src="<?php echo ".".$row["user_pic"];?>" class="img-thumbnail" alt="profile image"></div>
 					<table class="table">
 						<thead">	
 							<tr>
-								<th>Name</th>
+								<th>Name :</th>
 								<td><?php echo $row["user_name"];?></td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<th>User ID</th>
-								<td><?php echo $row["user_id"];?></td>
+								<th>User ID :<span class="text-danger"> (Keep your ID private!)</span></th>
+
+								<td><?php echo $row["user_id"];?> </td>
 							</tr>
 							<tr>
-								<th>Email</th>
+								<th>Email :</th>
 								<td><?php echo $row["user_email"];?></td>
 							</tr>
 							<tr>
-								<th>Contact Number</th>
+								<th>Contact Number :</th>
 								<td><?php echo $row["user_phoneno"];?></td>
 							</tr>
 							<tr>
-								<th>Student ID</th>
+								<th>Student ID :</th>
 								<td><?php echo $row["student_id"];?></td>
 							</tr>
 							<tr>
-								<th>Department</th>
+								<th>Department 	:</th>
 								<td><?php echo $row["dept"];?></td>
 							</tr>	
 						</tbody>	

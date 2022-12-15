@@ -54,7 +54,7 @@ if (isset($_POST["signup"])) {
 			}
 
 			else{
-				$sql= mysqli_query($conn,"UPDATE booklist SET book_name ='$bookname_new',book_image ='$dst1',author_name ='$authorname_new',cat_name='$category_new',no_of_copy='$numberofcopies_new'WHERE book_id='$id'");
+				$sql= mysqli_query($conn,"UPDATE booklist SET book_name ='$bookname_new',book_image ='$dst1',author_name ='$authorname_new',cat_name='$category_new',no_of_copy='$numberofcopies_new',available_copy='$numberofcopies_new' WHERE book_id='$id'");
 
 						if ($sql) {
 

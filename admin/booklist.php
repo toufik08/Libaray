@@ -21,7 +21,7 @@
 					 if (isset($_POST["submit1"]))
 					 { ?>
 
-	                <table class="table">
+	                <table class="table table-hover">
 	                    <thead>
 	                        <tr>
 	                        	<th scope="col">Book Image</th>
@@ -40,7 +40,7 @@
 						    while($row=mysqli_fetch_array($read_query))
 						{ ?>
 	                        <tr>
-	                        	<td><img src="<?php echo $row["book_image"];?>" height=100px width=100px></td>
+	                        	<td><img src="<?php echo $row["book_image"];?>" class="img-thumbnail" height=100px width=100px></td>
 	                            <th scope="row"><?php echo $row["book_id"];?></th>
 	                            <td><?php echo $row["book_name"];?></td>
 	                            <td><?php echo $row["author_name"];?></td>
@@ -63,7 +63,7 @@
 
 					 else { ?>
 
-	                <table class="table">
+	                <table class="table table-hover">
 	                    <thead>
 	                        <tr>
 	                        	<th scope="col">Book Image</th>
@@ -82,7 +82,7 @@
 						    while($row=mysqli_fetch_array($read_query))
 						{ ?>
 	                        <tr>
-	                        	<td><img src="<?php echo $row["book_image"];?>" height=100px width=100px></td>
+	                        	<td><img src="<?php echo $row["book_image"];?>" class="img-thumbnail" height=100px width=100px></td>
 	                            <th scope="row"><?php echo $row["book_id"];?></th>
 	                            <td><?php echo $row["book_name"];?></td>
 	                            <td><?php echo $row["author_name"];?></td>

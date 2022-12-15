@@ -15,7 +15,7 @@
 		if (isset($_POST["signup"])) {
 
 			$user_name = $_POST["user_name"];
-			$useremail = $_POST["user_email"];
+			$useremails = $_POST["user_email"];
 			$userpass = $_POST["user_pass"];
 			$userphno = $_POST["userphoneno"];
 			$stuid = $_POST["stuid"];
@@ -32,7 +32,7 @@
 				$usernameError="Name Field is Empty";
 			}
 
-			else if($useremail=="") {
+			else if($useremails=="") {
 				$useremailError="Please Enter your Email";
 			}
 			else if($userpass=="") {
@@ -48,13 +48,13 @@
 				$emptydepterror="Please Enter Departent Name";
 			}
 			else{
-				$sql = "SELECT user_email FROM user WHERE user_email = '$useremail'";
+				$sql = "SELECT user_email FROM user WHERE user_email = '$useremails'";
 			    $result = mysqli_query($conn,$sql);
 
 
 			    $count = mysqli_num_rows($result);
 				    if ($count == 0) {
-						$sql= mysqli_query($conn,"INSERT INTO user(user_name, user_email, user_password,user_phoneno,status,student_id,dept,user_pic) VALUES('$user_name', '$useremail', '$userpass', '$userphno', 'no', '$stuid','$dept','$dst1')");
+						$sql= mysqli_query($conn,"INSERT INTO user(user_name, user_email, user_password,user_phoneno,status,student_id,dept,user_pic) VALUES('$user_name', '$useremails', '$userpass', '$userphno', 'no', '$stuid','$dept','$dst1')");
 
 						if ($sql) {
 
@@ -138,15 +138,15 @@ $sql = "SELECT * FROM user ";
 					<div class="card-body">
 						<!--  Singup From  -->
 						<form action="" method="POST" enctype="multipart/form-data">
+							<!-- Signup sucessfully -->
+							<span style="color: green";> <?php echo isset($usersignmsg)? $usersignmsg :""; ?> </span>
+							<!-- Signup fail -->
+							<span style="color: red";> <?php echo isset($usersignmsg2)? $usersignmsg2 :""; ?> </span>
+							<!-- allready user -->
+							<span style="color: red";> <?php echo isset($allradyuserError)? $allradyuserError :""; ?> </span>
 
 							<div class="mb-3">
 								<label for="name" class="form-label">User Name</label>
-								<!-- Signup sucessfully -->
-								<span style="color: green";> <?php echo isset($usersignmsg)? $usersignmsg :""; ?> </span>
-								<!-- Signup fail -->
-								<span style="color: red";> <?php echo isset($usersignmsg2)? $usersignmsg2 :""; ?> </span>
-								<!-- allready user -->
-								<span style="color: red";> <?php echo isset($allradyuserError)? $allradyuserError :""; ?> </span>
 								<!-- user name empty -->
 								<span style="color: red";> <?php echo isset($usernameError)? $usernameError :""; ?> </span>
 								<input type="text" class="form-control" name="user_name" id="name" placeholder="Enter Your Name" value="<?php echo isset($user_name)?$user_name:""; ?>">
@@ -155,7 +155,7 @@ $sql = "SELECT * FROM user ";
 							<div class="mb-3">
 								<label for="exampleInputEmail1" class="form-label">Email address</label>
 								<span style="color: red";> <?php echo isset($useremailError)? $useremailError :""; ?> </span>
-								<input type="email" class="form-control" name="user_email" id="exampleInputEmail1" placeholder="Enter Your Email" value="<?php echo isset($useremail)?$useremail:""; ?>">
+								<input type="email" class="form-control" name="user_email" id="exampleInputEmail1" placeholder="Enter Your Email" value="<?php echo isset($useremails)?$useremails:""; ?>">
 							</div>
 
 							<div class="mb-3">
@@ -204,10 +204,10 @@ $sql = "SELECT * FROM user ";
 					<div class="card-body">
 						<!--  Login From  -->
 						<form action="" method="POST">
+						<span style="color: red";> <?php echo isset($userloginError)? $userloginError:""; ?> </span>
 							<div class="mb-3">
 								<label for="exampleInputEmail1" class="form-label">Email address</label>
 								<span style="color: red";> <?php echo isset($emptyemailerror)? $emptyemailerror :""; ?> </span>
-								<span style="color: red";> <?php echo isset($userloginError)? $userloginError:""; ?> </span>
 								<input type="email" name="useremail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email" value="<?php echo isset($useremail)?$useremail:""; ?>" >
 							</div>
 							<div class="mb-3">
@@ -217,6 +217,7 @@ $sql = "SELECT * FROM user ";
 							</div>
 							<button type="submit" name="login" class="btn btn-primary">Login</button>
 						</form>
+						<a href="forgetpasssword.php">Forget Password?</a>
 						<!--  Login From  -->
 					</div>
 				</div>

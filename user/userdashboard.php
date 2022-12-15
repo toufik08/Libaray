@@ -4,12 +4,23 @@
     ?>
 
 
+
+
 			<!-- Admin Body Content Start -->
             <div class="col-sm-9 mt-3">
                 <div class="row mx-5 text-center">
     				<!-- Book Request Table Start -->
                     <div class="col-sm-12 mt-3 text-center">
     	                <!-- Table Start -->
+                             <?php
+                                if (isset($_GET["id"])) {
+                                    $idissue=$_GET["id"];
+                                     if ($idissue=='del') {
+                                        $msg1="Book Delete Sucesfully!";
+                                     }
+                                }
+                            ?>
+                         <span style="color: red";> <?php echo isset($msg1)? $msg1 :""; ?> </span>
     	                <p class="bg-dark text-white p-2">My Issue Book</p>
                         <a href="userissuenewbook.php"><button class="btn btn-primary mb-3">Issue New book Request</button></a>
     	                <table class="table">

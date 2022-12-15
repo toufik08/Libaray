@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2022 at 09:55 PM
+-- Generation Time: Dec 12, 2022 at 07:44 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.27
 
@@ -63,13 +63,13 @@ CREATE TABLE `booklist` (
 --
 
 INSERT INTO `booklist` (`book_id`, `book_name`, `book_image`, `author_name`, `no_of_copy`, `available_copy`, `cat_name`, `laibarian_name`) VALUES
-(20, 'abababa', '../image/books_image/7e9fd033c7fe5568d3b08dd0469b8b50pexels-quang-nguyen-vinh-2133604.jpg', 'aaa', 10, 0, 'Physics', ''),
-(25, 'aaaa', '../image/books_image/307c38e2d75e2131a4b2c1ca347bc6dapibubear_311265295_1269169680548554_2377536271786494888_n.jpg', 'aaa', 4, 3, 'CSE', ''),
-(26, 'Electric Machinery Fundamentals', '../image/books_image/2ff1f5d3057096d4aa416e4e59a7e5baD5.jpg', ' Stephen Chapman', 19, 21, 'EEE', ''),
-(27, 'The Usborne Book of Astronomy & Space', '../image/books_image/1ca56405f2c10ebba23d90342a3b1eca51MCRe5uHVL._AC_SY780_.jpg', 'Lisa Miles, Alastair Smith', 5, 0, 'Astronomy', ''),
-(28, 'new book', '../image/books_image/78b6dd25741b4e3dfef2fcd0c23a5a6d306540717_3607885649495446_1664258900935426859_n.jpg', 'newa', 4, 1, 'Physics', ''),
-(29, ' The C++ Programming Language, 4th Edition 4th Edition', '../image/books_image/59b68a6baf6eb8ca38439f48108f160f0321563840.01._SCLZZZZZZZ_SX500_.jpg', 'Bjarne Stroustrup', 30, 20, 'CSE', ''),
-(30, 'name of book', '../image/books_image/08320049f0d8737caf4f8f77b5aec249280288893_1059759058268526_3199909925641020996_n.jpg', 'namepp', 0, 0, 'Mathematics', '');
+(20, 'abababa', '../image/books_image/7e9fd033c7fe5568d3b08dd0469b8b50pexels-quang-nguyen-vinh-2133604.jpg', 'aaa', 10, 10, 'Physics', ''),
+(25, 'aaaa', '../image/books_image/307c38e2d75e2131a4b2c1ca347bc6dapibubear_311265295_1269169680548554_2377536271786494888_n.jpg', 'aaa', 4, 4, 'CSE', ''),
+(26, 'Electric Machinery Fundamentals', '../image/books_image/2ff1f5d3057096d4aa416e4e59a7e5baD5.jpg', ' Stephen Chapman', 19, 19, 'EEE', ''),
+(27, 'The Usborne Book of Astronomy & Space', '../image/books_image/1ca56405f2c10ebba23d90342a3b1eca51MCRe5uHVL._AC_SY780_.jpg', 'Lisa Miles, Alastair Smith', 5, 5, 'Astronomy', ''),
+(28, 'new book', '../image/books_image/78b6dd25741b4e3dfef2fcd0c23a5a6d306540717_3607885649495446_1664258900935426859_n.jpg', 'newa', 4, 4, 'Physics', ''),
+(29, ' The C++ Programming Language, 4th Edition 4th Edition', '../image/books_image/59b68a6baf6eb8ca38439f48108f160f0321563840.01._SCLZZZZZZZ_SX500_.jpg', 'Bjarne Stroustrup', 30, 30, 'CSE', ''),
+(30, 'name of book', '../image/books_image/08320049f0d8737caf4f8f77b5aec249280288893_1059759058268526_3199909925641020996_n.jpg', 'namepp', 20, 20, 'Mathematics', '');
 
 -- --------------------------------------------------------
 
@@ -119,23 +119,7 @@ CREATE TABLE `issuebook` (
 --
 
 INSERT INTO `issuebook` (`issue_book_id`, `book_id`, `book_name`, `user_email`, `user_id`, `user_name`, `Issue_date`, `return_date`, `status`) VALUES
-(117, 25, 'aaaa', 'aaa@gmail.com', '1', 'aaa', '03-12-22', '06-12-22', 'returned'),
-(118, 26, 'Electric Machinery Fundamentals', 'toufik@gmail.com', '5', 'toufik', '29-11-22', '03-12-22', 'returned'),
-(120, 29, ' The C++ Programming Language, 4th Edition 4th Edition', 'rupos@gmail.com', '10', 'rupos', '03-12-22', '03-12-22', 'returned'),
-(125, 20, 'aajdlajdla', 'aaa@gmail.com', '1', 'aaa', '06-12-22', '11-12-2022', 'borrow'),
-(128, 29, ' The C++ Programming Language, 4th Edition 4th Edition', 'rupos@gmail.com', '10', 'rupos', '06-12-22', '06-12-22', 'returned'),
-(133, 26, 'Electric Machinery Fundamentals', 'toufik@gmail.com', '5', 'toufik', '06-12-22', '06-12-22', 'returned'),
-(134, 29, ' The C++ Programming Language, 4th Edition 4th Edition', 'toufik@gmail.com', '5', 'toufik', '06-12-22', '06-12-22', 'returned'),
-(135, 26, 'Electric Machinery Fundamentals', 'toufik@gmail.com', '5', 'toufik', '06-12-22', '11-12-22', 'dateover'),
-(138, 26, 'Electric Machinery Fundamentals', 'samiul@gmail.com', '17', 'samiul', '06-12-22', '11-12-2022', 'borrow'),
-(139, 29, ' The C++ Programming Language, 4th Edition 4th Edition', 'samiul@gmail.com', '17', 'samiul', '01-12-22', '05-12-2022', 'dateover'),
-(140, 29, ' The C++ Programming Language, 4th Edition 4th Edition', 'samiul@gmail.com', '17', 'samiul', '01-12-22', '05-12-2022', 'dateover'),
-(141, 20, 'aajdlajdla', 'samiul@gmail.com', '17', 'samiul', '06-12-22', '11-12-2022', 'borrow'),
-(142, 29, ' The C++ Programming Language, 4th Edition 4th Edition', 'toufik@gmail.com', '5', 'toufik', '07-12-22', '12-12-2022', 'borrow'),
-(143, 29, ' The C++ Programming Language, 4th Edition 4th Edition', 'munzu@gmail.com', '23', 'Munzereen Shahid', '08-12-22', '13-12-2022', 'borrow'),
-(144, 20, 'aajdlajdla', 'munzu@gmail.com', '23', 'Munzereen Shahid', '09-12-22', '14-12-22', 'pending'),
-(157, 20, 'aajdlajdla', 'toufik@gmail.com', '5', 'toufik', '10-12-22', '15-12-22', 'pending'),
-(158, 20, 'aajdlajdla', 'toufik@gmail.com', '5', 'toufik', '10-12-22', '15-12-22', 'pending');
+(190, 20, 'abababa', 'lisa@gmail.com', '34', 'lisa', '12-12-22', '12-12-22', 'returned');
 
 -- --------------------------------------------------------
 
@@ -160,19 +144,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password`, `user_phoneno`, `status`, `student_id`, `dept`, `user_pic`) VALUES
-(1, 'aaa', 'aaa@gmail.com', 'aaaa', '5656', 'yes', 20, '', ''),
-(5, 'Toufik Hasan', 'toufik@gmail.com', 'toufik', '01710365424', 'yes', 1823456244, 'EEE', './image/user_image/bf5412f8c09bee279d6db0e287168e76linustech_308073761_1253452365446684_2676245555575551316_n.jpg'),
-(10, 'Ahmed Rupos', 'rupos@gmail.com', 'aaaa', '445545454', 'yes', 1923130002, 'CSE', './image/user_image/0bae511133d15200051d42c97e227f55o.jpg'),
-(13, 'onik', 'onik@gmail.com', 'onik', 'onik', 'yes', 0, '', ''),
-(17, 'samiul', 'samiul@gmail.com', 'sami', 'samiul', 'yes', 0, '', ''),
-(18, 'Onikbro', 'onikbro@gmail.com', 'onik', '01865656565', 'yes', 0, '', ''),
-(19, 'necole', 'nicole@gmail.com', 'nicole', '01710632751', 'yes', 0, '', ''),
-(20, 'alexd', 'alexd@gmail.com', 'alexd', '5454545454', 'yes', 0, '', ''),
-(21, 'mmm', 'mm@gmail.com', 'mm', '01454', 'no', 111, 'Cse', '../image/user_image/0290beb284f4a5d7a906995b6b8870cd'),
-(22, 'ppp', 'mm1@gmail.com', 'mm', '54545', 'yes', 42421, 'cse', './image/user_image/b9af309b05f399242b528291aea95ebc'),
-(23, 'Munzereen Shahid', 'munzu@gmail.com', 'm', '0145685324645', 'yes', 13125500, 'English', './image/user_image/0e3f2a7ff408ca1cb48b0c403d404b95munzereen.shahid_317707333_5609681275793343_5653511102029844165_n.jpg'),
-(24, 'o', 'o@gmail.com', 'o', '12', 'yes', 21, 'EEE', '/image/user_image/59809426523130f15838dbb9f4ac3010linustech_308073761_1253452365446684_2676245555575551316_n.jpg'),
-(25, 'r', 'r@gmail.com', 'r', '3', 'yes', 3, 'r', './image/user_image/e1c930b0be18d73fd1cd49e43b5bdcc420220930_171205.jpg');
+(23, 'Munzereen Shahid', 'munzu@gmail.com', 'm', '0145685324645', 'yes', 13125500, 'English', './image/user_image/ec24988f1b38ffa8b752de7ba5d1a9d6240607345_413971250291092_8993427087351339923_n.jpg'),
+(27, 'Hasin Hayder', 'h@gmail.com', 'h', '654654565', 'yes', 124, 'CSE', './image/user_image/4508d230f551b09f809567d59c3efdc8unnamed.jpg'),
+(28, 'Anisul Islam', 'anisul@gmail.com', 'an', '6656565', 'yes', 1335665, 'CSE', './image/user_image/be87c308858a6aeb883acb322bf484f13bdd809671476c12ebb1159d83d8a267unname22d.jpg'),
+(29, 'Toufik Hasan', 'toufikhasan088@gmail.com', 'r', '01710632751', 'yes', 192313006, 'Computer Science and Engineering', './image/user_image/18f74ad7d441f14e346ebb5ce99d99feo.jpg'),
+(33, 'alex', 'alex@gmail.com', 'a', '8466542', 'yes', 181818001, 'EEE', './image/user_image/35804b734547cd53dc3361f9e34cfa8cistockphoto-1270067126-612x612.jpg'),
+(34, 'lisa', 'lisa@gmail.com', 'l', '656547521', 'yes', 171717001, 'CSE', './image/user_image/e125226d8e94bea69552532198661948prometeus200501032-beautiful-young-woman-with-long-red-hair-hair-care-hair-coloring-.jpg'),
+(35, 'Ava', 'ava@gmail.com', 'a', '66475641471', 'yes', 141414010, 'EEE', './image/user_image/8760285e19ec2f787daf2610b2b9d762pexels-juliana-stein-1898555.jpg');
 
 --
 -- Indexes for dumped tables
@@ -234,13 +212,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `issuebook`
 --
 ALTER TABLE `issuebook`
-  MODIFY `issue_book_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `issue_book_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=191;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -56,7 +56,7 @@ if (isset($_POST["signup"])) {
 
                 if ($sql) {
 
-                    $usersignmsg="Successfully Upadte";
+                    $usersignmsg="Successfully Change Password";
                 }
                 else{
                     $usersignmsg2="Update fail";
@@ -113,7 +113,8 @@ if (isset($_POST["signup"])) {
                     <span style="color: red";> <?php echo isset($emptydepterror)? $emptydepterror :""; ?> </span>
                     <input type="text" class="form-control" name="edit_dept" id="exampleInputdept" placeholder="Enter Your Department Name" value="<?php echo isset($dept_new)?$dept_new:$dept; ?>">
                 </div>
-                <button type="submit" name="signup" class="btn btn-primary">Singup</button>
+                <button type="submit" name="signup" class="btn btn-primary">Update</button>
+                 <a href="userprofile.php" class="btn btn-danger">Cancel</a>
             </form>
          </div>
     </div>
