@@ -50,9 +50,6 @@
 		}
 	?>
 
-
-
-
 <!-- navbar Start -->
 	<nav class="navbar bg-dark">
 		<div class="container-fluid">
