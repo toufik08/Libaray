@@ -28,6 +28,7 @@ $count = mysqli_num_rows($result);
 		$sql= mysqli_query($conn,"INSERT INTO issuebook(book_id, book_name, user_email, user_id, user_name, Issue_date, return_date, status) VALUES('$bookid', '$book_name', '$useremails', '$userid','$user_name', '$issuedate', '$returndate','pending')");
 		
 		if ($sql) {
+			mysqli_query($conn,"UPDATE booklist SET available_copy=available_copy-1  WHERE book_id='$bookid'");
 	?>
 			<script type="text/javascript">
 				 window.location="userbooklist.php?id=<?php echo"0"?>";
