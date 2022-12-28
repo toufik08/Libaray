@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 07:44 PM
+-- Generation Time: Dec 28, 2022 at 03:47 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.27
 
@@ -65,7 +65,7 @@ CREATE TABLE `booklist` (
 INSERT INTO `booklist` (`book_id`, `book_name`, `book_image`, `author_name`, `no_of_copy`, `available_copy`, `cat_name`, `laibarian_name`) VALUES
 (20, 'abababa', '../image/books_image/7e9fd033c7fe5568d3b08dd0469b8b50pexels-quang-nguyen-vinh-2133604.jpg', 'aaa', 10, 10, 'Physics', ''),
 (25, 'aaaa', '../image/books_image/307c38e2d75e2131a4b2c1ca347bc6dapibubear_311265295_1269169680548554_2377536271786494888_n.jpg', 'aaa', 4, 4, 'CSE', ''),
-(26, 'Electric Machinery Fundamentals', '../image/books_image/2ff1f5d3057096d4aa416e4e59a7e5baD5.jpg', ' Stephen Chapman', 19, 19, 'EEE', ''),
+(26, 'Electric Machinery Fundamentals', '../image/books_image/597e442d1313f5f33a6306a09b640a9c4122GTgFDeL._AC_SY1000_.jpg', ' Stephen Chapman', 50, 50, 'EEE', ''),
 (27, 'The Usborne Book of Astronomy & Space', '../image/books_image/1ca56405f2c10ebba23d90342a3b1eca51MCRe5uHVL._AC_SY780_.jpg', 'Lisa Miles, Alastair Smith', 5, 5, 'Astronomy', ''),
 (28, 'new book', '../image/books_image/78b6dd25741b4e3dfef2fcd0c23a5a6d306540717_3607885649495446_1664258900935426859_n.jpg', 'newa', 4, 4, 'Physics', ''),
 (29, ' The C++ Programming Language, 4th Edition 4th Edition', '../image/books_image/59b68a6baf6eb8ca38439f48108f160f0321563840.01._SCLZZZZZZZ_SX500_.jpg', 'Bjarne Stroustrup', 30, 30, 'CSE', ''),
@@ -79,22 +79,20 @@ INSERT INTO `booklist` (`book_id`, `book_name`, `book_image`, `author_name`, `no
 
 CREATE TABLE `category` (
   `category_no` int(11) NOT NULL,
-  `category_name` varchar(255) NOT NULL,
-  `total_book` int(30) NOT NULL,
-  `available_book` int(30) NOT NULL
+  `category_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`category_no`, `category_name`, `total_book`, `available_book`) VALUES
-(1, 'Mathematics', 300, 290),
-(2, 'CSE', 0, 0),
-(3, 'EEE', 0, 0),
-(4, 'Physics', 0, 0),
-(5, 'Robotics', 0, 0),
-(6, 'Astronomy', 0, 0);
+INSERT INTO `category` (`category_no`, `category_name`) VALUES
+(1, 'Mathematics'),
+(2, 'CSE'),
+(3, 'EEE'),
+(4, 'Physics'),
+(5, 'Robotics'),
+(6, 'Astronomy');
 
 -- --------------------------------------------------------
 
@@ -119,7 +117,9 @@ CREATE TABLE `issuebook` (
 --
 
 INSERT INTO `issuebook` (`issue_book_id`, `book_id`, `book_name`, `user_email`, `user_id`, `user_name`, `Issue_date`, `return_date`, `status`) VALUES
-(190, 20, 'abababa', 'lisa@gmail.com', '34', 'lisa', '12-12-22', '12-12-22', 'returned');
+(190, 20, 'abababa', 'lisa@gmail.com', '34', 'lisa', '12-12-22', '12-12-22', 'returned'),
+(191, 27, 'The Usborne Book of Astronomy & Space', 'ru@gmail.com', '37', 'rupos', '16-12-22', '16-12-22', 'returned'),
+(193, 25, 'aaaa', 'ru@gmail.com', '37', 'rupos', '16-12-22', '27-12-22', 'returned');
 
 -- --------------------------------------------------------
 
@@ -150,7 +150,9 @@ INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password`, `user
 (29, 'Toufik Hasan', 'toufikhasan088@gmail.com', 'r', '01710632751', 'yes', 192313006, 'Computer Science and Engineering', './image/user_image/18f74ad7d441f14e346ebb5ce99d99feo.jpg'),
 (33, 'alex', 'alex@gmail.com', 'a', '8466542', 'yes', 181818001, 'EEE', './image/user_image/35804b734547cd53dc3361f9e34cfa8cistockphoto-1270067126-612x612.jpg'),
 (34, 'lisa', 'lisa@gmail.com', 'l', '656547521', 'yes', 171717001, 'CSE', './image/user_image/e125226d8e94bea69552532198661948prometeus200501032-beautiful-young-woman-with-long-red-hair-hair-care-hair-coloring-.jpg'),
-(35, 'Ava', 'ava@gmail.com', 'a', '66475641471', 'yes', 141414010, 'EEE', './image/user_image/8760285e19ec2f787daf2610b2b9d762pexels-juliana-stein-1898555.jpg');
+(35, 'Ava', 'ava@gmail.com', 'a', '66475641471', 'yes', 141414010, 'EEE', './image/user_image/8760285e19ec2f787daf2610b2b9d762pexels-juliana-stein-1898555.jpg'),
+(36, 'Ahmed Rupos', 'ar@gmail.com', 'ar', '0172646546545', 'no', 1414141414, 'CSE', './image/user_image/0fe60dbadab73ae64e8412460a5e255adc-Cover-gn73njaor4d7s28k33dftl5j46-20200117010139.jpeg'),
+(37, 'rupos', 'ru@gmail.com', 'rr', '0171234566789', 'yes', 15151515, 'CSE', './image/user_image/ff1fae6bac9d1d8f9fd90bc96ec1e900987c6aa8b3c093f0c6dd04fef4ddad011329373.jpg');
 
 --
 -- Indexes for dumped tables
@@ -212,13 +214,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `issuebook`
 --
 ALTER TABLE `issuebook`
-  MODIFY `issue_book_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=191;
+  MODIFY `issue_book_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

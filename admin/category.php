@@ -15,9 +15,7 @@
                         <thead>
                             <tr><th scope="col">Category No</th>
                                 <th scope="col">Category Name</th>
-                                <th scope="col">Total No. of Books</th>
-                                <th scope="col">Available Copy</th>
-                                <th scope="col">Action</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -28,12 +26,6 @@
                             <tr>
                                 <th scope="row"><?php echo $row["category_no"];?></th>
                                 <th scope="row"><?php echo $row["category_name"];?></th>
-                                <td><?php echo $row["total_book"];?></td>
-                                <td><?php echo $row["available_book"];?></td>
-                                <td>
-                                    <button type="submit" class="btn btn-warning" name="Delete"><i class="fa-solid fa-edit"></i></button>
-                                    <button type="submit" class="btn btn-danger " name="Delete"><i class="far fa-trash-alt"></i></button>
-                                </td>
                             </tr>
                         <?php } ?>
                         </tbody>
